@@ -1,5 +1,5 @@
 const addBook = () => (
-  <div className="addBook">
+  <>
     <h3>Add New Book</h3>
     <form className="add">
       <input type="text" placeholder="Enter Book title Here" />
@@ -10,7 +10,7 @@ const addBook = () => (
       </select>
       <button className="button" type="button">Add Book</button>
     </form>
-  </div>
+  </>
 );
 
 export default addBook;

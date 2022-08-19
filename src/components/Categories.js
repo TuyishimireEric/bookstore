@@ -1,5 +1,5 @@
 const Categories = () => (
-  <button className="check" type="submit">Check Status</button>
+  <input type="checkbox" />
 );
 
 export default Categories;
