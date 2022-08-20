@@ -1,4 +1,4 @@
-const addBook = () => (
+const AddBook = () => (
   <>
     <h3>Add New Book</h3>
     <form className="add">
@@ -13,4 +13,4 @@ const addBook = () => (
   </>
 );
 
-export default addBook;
+export default AddBook;
