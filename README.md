@@ -1,12 +1,13 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore : initialization
-I have created the React part of the app. and also set up routing using React Router.
+# Bookstore : Connect Redux and React
+In this branch I have used Redux store to display books. and also added some UI elements to the components and made them dispatch actions.
 
 ## Built With 
 
 - React Js
+- Redux
 - Vs code
 
 ## Getting Started

@@ -5,7 +5,7 @@ const initialState = [];
 const checkReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'Under construction';
+      return 'under construction';
     default:
       return state;
   }

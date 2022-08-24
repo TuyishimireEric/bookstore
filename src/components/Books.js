@@ -1,19 +1,17 @@
-import { React, useState } from 'react';
+/* eslint-disable max-len */
+import React from 'react';
+import { useSelector } from 'react-redux';
 import AddBook from './addBook';
 import Book from './Book';
 
 const Books = () => {
-  const [allBooks] = useState([
-    {
-      id: '1',
-      title: 'React documentation',
-      author: 'Paul gentil',
-    },
-  ]);
+  const books = useSelector((state) => state.books);
   return (
     <>
       <div className="allbooks">
-        {allBooks.map((book) => <Book key={book.id} title={book.title} author={book.author} />)}
+        {books.map(
+          (book) => <Book key={book.id} id={book.id} title={book.title} author={book.author} />,
+        )}
       </div>
 
       <AddBook />
