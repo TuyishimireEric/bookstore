@@ -3,20 +3,22 @@ import { v4 as uuidv4 } from 'uuid';
 const ADD_BOOK = 'bookstore/books/addBook';
 const REMOVE_BOOK = 'bookstore/books/removeBook';
 
-const initialState = [];
+const initialState = [
+  {
+    id: uuidv4(),
+    title: 'History of Rwanda',
+    author: 'Alex Kagame',
+  }];
 
 const addRemoveReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
         ...state,
-        {
-          id: action.payload.id,
-          description: action.payload.book,
-        },
+        action.book,
       ];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload.id);
+      return state.filter((book) => book.id !== action.id);
     default:
       return state;
   }
@@ -24,17 +26,12 @@ const addRemoveReducer = (state = initialState, action) => {
 
 export const addBook = (book) => ({
   type: ADD_BOOK,
-  payload: {
-    book,
-    id: uuidv4(),
-  },
+  book,
 });
 
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
-  payload: {
-    id,
-  },
+  id,
 });
 
 export default addRemoveReducer;
