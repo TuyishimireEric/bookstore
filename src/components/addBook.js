@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookApi } from '../redux/books/books';
 
 function AddBook() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function AddBook() {
     e.preventDefault();
     if (title !== '' && author !== '') {
       const id = uuidv4();
-      dispatch(addBook({ id, title, author }));
+      dispatch(addBookApi({ id, title, author }));
       e.target.reset();
     }
   };

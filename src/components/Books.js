@@ -1,11 +1,18 @@
 /* eslint-disable max-len */
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import AddBook from './addBook';
 import Book from './Book';
+import { fetchBookApi } from '../redux/books/books';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBookApi());
+  }, [dispatch]);
+
   return (
     <>
       <div className="allbooks">
