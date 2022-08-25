@@ -27,7 +27,6 @@ export const addBook = (book) => ({
   type: ADD_BOOK,
   book,
 });
-
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
@@ -45,6 +44,16 @@ export const fetchBookApi = () => async (dispatch) => {
     return { id: item[0], title, author };
   });
   dispatch(fetchBook(booksFetched));
+};
+
+export const removeBookApi = (id) => async (dispatch) => {
+  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8bHEqSbfdyYUuS4cM1PJ/books/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  dispatch(removeBook(id));
 };
 
 export const addBookApi = (book) => async (dispatch) => {
