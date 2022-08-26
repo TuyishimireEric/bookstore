@@ -5,16 +5,18 @@ import { Provider } from 'react-redux';
 import Books from './components/Books';
 import Categories from './components/Categories';
 import store from './redux/configureStore';
+import user from './components/images/user.png';
 
 const app = () => (
   <Provider store={store}>
     <div className="App">
       <div className="top">
-        <h1 className="title">Bookstore CMS</h1>
-        <nav className="nav">
-          <Link className="a" to="/">Books</Link>
-          <Link className="a" to="/Categories">Categories</Link>
-        </nav>
+        <section className="title">
+          <h1>Bookstore CMS</h1>
+          <Link className="a active" to="/">BOOKS</Link>
+          <Link className="a" to="/Categories">CATEGORIES</Link>
+        </section>
+        <img src={user} alt="icon" className="icon" />
       </div>
       <section className="section">
         <Routes>
