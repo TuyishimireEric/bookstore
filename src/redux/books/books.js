@@ -40,8 +40,10 @@ const fetchBook = (book) => ({
 export const fetchBookApi = () => async (dispatch) => {
   const books = await axios.get(apiUrl);
   const booksFetched = Object.entries(books.data).map((item) => {
-    const { title, author } = item[1][0];
-    return { id: item[0], title, author };
+    const { title, author, category } = item[1][0];
+    return {
+      id: item[0], title, author, category,
+    };
   });
   dispatch(fetchBook(booksFetched));
 };

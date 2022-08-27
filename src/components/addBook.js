@@ -27,11 +27,11 @@ function AddBook() {
 
   return (
     <>
-      <h3>Add New Book</h3>
+      <h3 className="form-title">ADD NEW BOOK</h3>
       <form className="add" onSubmit={addData}>
-        <input type="text" placeholder="Enter Book title Here" onChange={newTitle} required />
-        <input type="text" placeholder="Enter author Here" onChange={newAuthor} required />
-        <button type="submit">Add Book</button>
+        <input className="input" type="text" placeholder="Enter Book title Here" onChange={newTitle} required />
+        <input className="input author" type="text" placeholder="Enter author Here" onChange={newAuthor} required />
+        <button className="submit-book" type="submit">ADD BOOK</button>
       </form>
     </>
   );

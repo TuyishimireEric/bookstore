@@ -2,7 +2,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Bookstore : Connect Redux and React
-In this branch I have used Redux store to display books. and also added some UI elements to the components and made them dispatch actions.
+In this branch I have added the styling to the project.
+
+## Project Photo
+![bookstore](./pic.png)
 
 ## Built With 
 
